@@ -12,10 +12,19 @@ public class QuickFind {
     }
 
     public boolean find(int x, int y) {
+
+        if (x > ids.length || y > ids.length) {
+            throw new IllegalArgumentException("Invalid input. Upper bound: " + ids.length);
+        }
+
         return ids[x] == ids[y];
     }
 
     public void union(int x, int y) {
+
+        if (x > ids.length || y > ids.length) {
+            throw new IllegalArgumentException("Invalid input. Upper bound: " + ids.length);
+        }
 
         int xid = ids[x];
         int yid = ids[y];
